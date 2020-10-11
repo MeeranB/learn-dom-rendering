@@ -84,6 +84,16 @@ document.querySelector("#app").append(title, list);
 
 </details>
 
+### Challenge 1 Learning Points
+
+* Use textContent instead of innerText to update the text of an element, as innerText is more performance heavy because it returns only visible text, and therefore has to calculate which text is visible when called.
+
+* Using append to add textContent to an element does not work, it will put the text below the element
+
+* The append method is for adding child elements to a parent, and therefore all elements added consecutively within the append parameters will be nested exactly one level inside the parent, and not deeper than this unless called upon with a new append statement on one of the child elements.
+
+* Take care with using `setAttribute` as it will overwrite any previous value for the attribute stated in the argument, this may cause unintended effects, instead use `img.[attribute]` where necessary
+
 ## Abstracting `createElement`
 
 We can improve on the built-in `document.createElement` to make our code quite a lot more consise. Let's aim for an API like this:

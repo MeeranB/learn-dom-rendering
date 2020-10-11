@@ -6,7 +6,19 @@
     <title>Learn DOM rendering</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <h1>All the dogs</h1>
+      <ul id="dogList">
+
+      </ul>
+    </div>
+
+    <template id="dogItem">
+      <li class="card">
+        <h2>Dog name</h2>
+        <img src="dog image url" alt="" />
+      </li>
+    </template>
 
     <script type="module" src="app.js"></script>
   </body>

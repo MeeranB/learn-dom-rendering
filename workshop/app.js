@@ -1,15 +1,14 @@
 import dogs from "./dogs.js"
-import create from "./create-element.js"
 
-const dogList = dogs.map((dog)=>{
-    return `<li class="card">
-    <h2>${dog.name}</h2>
-    <img src=${dog.image} alt=" "
-    </li>`
+const dogList = dogs.map((dog)=> {
+    const dogTemplate = document.getElementById("dogItem")
+    const dogItem = dogTemplate.content.cloneNode(true)
+    const dogHeader = dogItem.querySelector("h2")
+    dogHeader.textContent = dog.name
+    const dogImg = dogItem.querySelector("img")
+    dogImg.src = dog.image
+    return dogItem
 })
 
-const app = document.getElementById("app")
-
-app.innerHTML = `<h1>All the dogs</h1>
-<ul>${dogList.join(`\n`)}</ul>
-`
+const emptyDogList = document.getElementById("dogList")
+emptyDogList.append(...dogList)

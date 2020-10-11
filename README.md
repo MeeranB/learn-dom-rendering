@@ -167,6 +167,8 @@ document.querySelector("#app").append(title, list);
 
 * The append method can be used to add textContent to an element ONLY if the first argument of the append method is the text to be added to the parent element
 
+* We set the `className` attribute on an element instead of the `class` attribute, this is because className is a valid property of the Element class. All element properties set using `Object.assign` must be valid properties of that element class
+
 ## `innerHTML`
 
 This method almost feels like cheating. Whatever you set the `innerHTML` property of an element to is interpreted as HTML by the browser and rendered. This makes it a quick way to render a chunk of DOM, especially combined with template literals:

@@ -1,17 +1,15 @@
 import dogs from "./dogs.js"
 import create from "./create-element.js"
 
-const header = create("h1", {}, "All the dogs")
-
-//Map each array object into a node item (li item)
 const dogList = dogs.map((dog)=>{
-    const h2 = create("h2", {}, dog.name)
-    const img = create("img", {src:dog.image, alt:" "})
-    return create("li", {className: "card"}, h2, img)
+    return `<li class="card">
+    <h2>${dog.name}</h2>
+    <img src=${dog.image} alt=" "
+    </li>`
 })
-
-const ul = create("ul", {}, ...dogList)
 
 const app = document.getElementById("app")
 
-app.append(header, ul)
+app.innerHTML = `<h1>All the dogs</h1>
+<ul>${dogList.join(`\n`)}</ul>
+`
